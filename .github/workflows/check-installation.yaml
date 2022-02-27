@@ -29,16 +29,15 @@ jobs:
       - name: Install SWI-Prolog
         run: |
           case $RUNNER_OS in
-            macOS)
+            macOS|Linux)
               brew install swi-prolog
               ;;
             Windows)
               choco install SWI-Prolog
               echo "C:\\Program Files\\swipl\\bin" >> $GITHUB_PATH
               ;;
-            Linux)
-              brew install swi-prolog
-              ;;
+            *)
+              exit 1
           esac
         shell: bash
       - name: Check installation
