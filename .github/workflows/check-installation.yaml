@@ -8,15 +8,12 @@ name: Run Tests
 
 jobs:
   run-tests:
-    runs-on: ${{ matrix.config.os }}
-    name: ${{ matrix.config.os }}
+    runs-on: ${{ matrix.os }}-latest
+    name: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        config:
-          - {os: macos-latest}
-          - {os: windows-latest}
-          - {os: ubuntu-latest}
+        os: [macos, windows, ubuntu]
     steps:
       # https://formulae.brew.sh/formula/swi-prolog
       # https://community.chocolatey.org/packages/SWI-Prolog
