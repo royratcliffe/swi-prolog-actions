@@ -18,14 +18,8 @@ jobs:
           - {os: windows-latest}
           - {os: ubuntu-latest}
     steps:
-      # Install SWI-Prolog
-      #
-      # Stable versions install on macOS and Windows whereas Linux installs the
-      # development version. Gives wider version coverage.
-      #
       # https://formulae.brew.sh/formula/swi-prolog
       # https://community.chocolatey.org/packages/SWI-Prolog
-      # https://www.swi-prolog.org/build/PPA.html
       - name: Install SWI-Prolog
         run: |
           case $RUNNER_OS in
