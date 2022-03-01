@@ -1,7 +1,5 @@
 name: Install SWI-Prolog
 description: Sets up Prolog
-inputs:
-outputs:
 runs:
   using: "composite"
   steps:
