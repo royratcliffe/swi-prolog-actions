@@ -1,0 +1,20 @@
+name: Install SWI-Prolog
+description: Sets up Prolog
+inputs:
+outputs:
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        case $RUNNER_OS in
+          macOS|Linux)
+            brew install swi-prolog
+            ;;
+          Windows)
+            choco install SWI-Prolog
+            echo "C:\\Program Files\\swipl\\bin" >> $GITHUB_PATH
+            ;;
+          *)
+            exit 1
+        esac
+      shell: bash
