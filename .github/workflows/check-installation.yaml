@@ -15,7 +15,8 @@ jobs:
       matrix:
         os: [macOS, Windows, Ubuntu]
     steps:
-      - uses: royratcliffe/swi-prolog-actions@action-yml
+      - name: Install SWI-Prolog
+        uses: royratcliffe/swi-prolog-actions@action-yml
       - name: Check installation
         run: swipl -t check_installation
       - uses: actions/checkout@v2
