@@ -15,8 +15,6 @@ jobs:
       matrix:
         os: [macos, windows, ubuntu]
     steps:
-      # https://formulae.brew.sh/formula/swi-prolog
-      # https://community.chocolatey.org/packages/SWI-Prolog
       - name: Install SWI-Prolog
         run: |
           case $RUNNER_OS in
