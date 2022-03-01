@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos, windows, ubuntu]
+        os: [macOS, Windows, Ubuntu]
     steps:
       - uses: royratcliffe/swi-prolog-actions@action-yml
       - name: Check installation
