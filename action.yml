@@ -1,5 +1,5 @@
 name: Install SWI-Prolog
-description: Sets up Prolog
+description: Sets up ISO/Edinburgh-style Prolog interpreter
 runs:
   using: "composite"
   steps:
