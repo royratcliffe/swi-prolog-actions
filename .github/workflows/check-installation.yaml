@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [main, master]
 
-name: Run Tests
+name: Check installation
 
 jobs:
   run-tests:
@@ -13,24 +13,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos, windows, ubuntu]
+        os: [macOS, Windows, Ubuntu]
     steps:
-      # https://formulae.brew.sh/formula/swi-prolog
-      # https://community.chocolatey.org/packages/SWI-Prolog
       - name: Install SWI-Prolog
-        run: |
-          case $RUNNER_OS in
-            macOS|Linux)
-              brew install swi-prolog
-              ;;
-            Windows)
-              choco install SWI-Prolog
-              echo "C:\\Program Files\\swipl\\bin" >> $GITHUB_PATH
-              ;;
-            *)
-              exit 1
-          esac
-        shell: bash
+        uses: royratcliffe/swi-prolog-actions@action-yml
       - name: Check installation
         run: swipl -t check_installation
       - uses: actions/checkout@v2
